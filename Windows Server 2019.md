@@ -71,20 +71,16 @@ svchost.exe         1300                00:00:03.000        11.1MB
 PING.EXE            1308                00:00:00.046        516.1kB
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak get-process -Name <span class="token function">ping</span>
-
 Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
 -------  ------    -----      -----    ------     --  -- -----------
      75       5      820       3252      0.03   4872   3 PING
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak get-process -Name vmwp
-
 Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
 -------  ------    -----      -----    ------     --  -- -----------
    17      7268    16088       1.55     4368       0    vmwp
   272	     14     4964      18764     
 </code></pre>
 <p>17     7268      16088       1.55   4368   0 vmwp<br>
-272      14     4964      18764       1.05   6584   0 vmwp<br>
-</p>
-<p></p>
+272      14     4964      18764       1.05   6584   0 vmwp</p>
 
