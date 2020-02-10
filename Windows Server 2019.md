@@ -45,7 +45,6 @@ Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuat
      75       5      820       3252       0.03    4872  3 PING
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">get-process -Name vmwp
-
 Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span> VM<span class="token punctuation">(</span>M<span class="token punctuation">)</span>   CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
 -------  ------    -----      ----- -----   ------     --  -- -----------
    1737      15    39452      19620 <span class="token punctuation">..</span>.61     5.55   2376   0 vmwp
