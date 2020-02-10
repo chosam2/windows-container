@@ -1,4 +1,3 @@
-
 <h2 id="windows-server-2019">Windows Server 2019</h2>
 <h3 id="step-1--hyper--Step 1 : Hyper -V  활성화</h3>두 가지 형태의 격리된 컨테이너를 비교하기 위해서는 Hypver-V가 활성화 되어야 합니다.</p>
 <h3 id="step-2--docker-설치">
@@ -83,6 +82,6 @@ Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuat
 <p></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjYzMDMxMTIsLTIxMTYxMjgwNzZdfQ
+eyJoaXN0b3J5IjpbLTEyMTU0NTgyMDIsLTIxMTYxMjgwNzZdfQ
 ==
 -->
