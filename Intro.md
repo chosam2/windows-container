@@ -13,6 +13,8 @@ PS C:\Users\nobreak> docker images
 REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
 mcr.microsoft.com/windows/nanoserver   1809                080394ef5494        5 weeks ago         251MB
 ```
+### Process Isolation
+
 ```bash
 PS C:\Users\nobreak> docker run -d --name process --isolation=process mcr.microsoft.com/windows/nanoserver:1809 ping localhost -t
 ```
@@ -44,10 +46,14 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
 ```
 
 ```bash
-PS C:\Users\nobreak> get-process -Name vmwp                                                                                                                                                                                               Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                                                -------  ------    -----      -----     ------     --  -- -----------                                                    951      17     7268      16088       1.55   4368   0 vmwp                                                           272      14     4964      18764       1.05   6584   0 vmwp 
+PS C:\Users\nobreak> get-process -Name vmwp                                                                                                                                                                                               
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                                                
+-------  ------    -----      -----     ------     --  -- -----------                                                    
+951      17     7268      16088       1.55   4368   0 vmwp                                                           
+272      14     4964      18764       1.05   6584   0 vmwp 
 ```
 
-### Process Isolation
+
 
 
 
@@ -55,6 +61,6 @@ PS C:\Users\nobreak> get-process -Name vmwp                                     
 
 ### Hyper-V Isolation
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ3MjA1NjEzLDQ4ODI1NTkzNiwtMzMyND
-U1MzYzXX0=
+eyJoaXN0b3J5IjpbMjEwMTA4OTMsNDg4MjU1OTM2LC0zMzI0NT
+UzNjNdfQ==
 -->
