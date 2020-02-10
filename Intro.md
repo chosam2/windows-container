@@ -85,12 +85,26 @@ svchost.exe         1112                00:00:00.484        3.076MB
 svchost.exe         1156                00:00:00.343        1.593MB
 svchost.exe         1300                00:00:03.000        11.1MB
 PING.EXE            1308                00:00:00.046        516.1kB
+```
 
+```bash
+PS C:\Users\nobreak> get-process -Name ping
 
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+     75       5      820       3252       0.03   4872   3 PING
+```
 
+```bash
+PS C:\Users\nobreak> get-process -Name vmwp
 
-
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    951      17     7268      16088       1.55   4368   0 vmwp
+    272      14     4964      18764       1.05   6584   0 vmwp
+   
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyMDYzNjE2OCw0ODgyNTU5MzYsLTMzMj
-Q1NTM2M119
+eyJoaXN0b3J5IjpbOTA3MjEyNjgzLDQ4ODI1NTkzNiwtMzMyND
+U1MzYzXX0=
 -->
