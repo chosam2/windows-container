@@ -3,6 +3,7 @@
 ### Step 1 : Hyper -V  활성화
 두 가지 형태의 격리된 컨테이너를 비교하기 위해서는 Hypver-V가 활성화 되어야 합니다.
 
+### Step 2 : Docker 설치
  
 
 <h2 id="isolation-비교">Isolation 비교</h2>
@@ -90,5 +91,6 @@ Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuat
 </code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2NzY3NTM3NywtMTcyNjYyMjA1MF19
+eyJoaXN0b3J5IjpbLTE2NjAzNzgxMjIsLTE3MjY2MjIwNTBdfQ
+==
 -->
