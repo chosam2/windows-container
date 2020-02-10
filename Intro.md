@@ -1,7 +1,10 @@
 ## Isolation 비교
 
 
-### Image 파ㅣㅇㄹ
+### 이미지 파일
+
+    enter code here
+
 ```bash
 PS C:\Users\nobreak> docker images
 REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
@@ -16,5 +19,5 @@ mcr.microsoft.com/windows/nanoserver   1809                080394ef5494        5
 
 ### Hyper-V Isolation
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDkzODI2OTUwLC0zMzI0NTUzNjNdfQ==
+eyJoaXN0b3J5IjpbLTQ0MTY0MzAzMywtMzMyNDU1MzYzXX0=
 -->
