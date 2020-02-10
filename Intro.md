@@ -17,6 +17,7 @@ mcr.microsoft.com/windows/nanoserver   1809                080394ef5494        5
 
 ```bash
 PS C:\Users\nobreak> docker run -d --name process --isolation=process mcr.microsoft.com/windows/nanoserver:1809 ping localhost -t
+cece6585ce235d4790d6ab4d86c425338a6c9091b0f45c2e6a4f883fd7348f7a
 ```
 ```bash
 PS C:\Users\nobreak> docker top cece6585ce235d4790d6ab4d86c425338a6c9091b0f45c2e6a4f883fd7348f7a
@@ -53,14 +54,43 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
 272      14     4964      18764       1.05   6584   0 vmwp 
 ```
 
-
-
-
-
-
-
 ### Hyper-V Isolation
+
+```bash
+PS C:\Users\nobreak>  docker run -d --name hyperv --isolation=hyperv mcr.microsoft.com/windows/nanoserver:1809 ping localhost -t
+a503f75e958370f0bb544c94e28b65eb38e9dc59a1087297316c5006503f997b
+```
+
+```bash
+PS C:\Users\nobreak> get-process -Name ping
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+     75       5      820       3252       0.03   4872   3 PING
+
+
+PS C:\Users\nobreak> docker top a503f75e958370f0bb544c94e28b65eb38e9dc59a1087297316c5006503f997b
+Name                PID                 CPU                 Private Working Set
+smss.exe            980                 00:00:00.328        249.9kB
+csrss.exe           1004                00:00:00.296        479.2kB
+wininit.exe         276                 00:00:00.296        806.9kB
+services.exe        428                 00:00:00.515        1.335MB
+lsass.exe           468                 00:00:00.812        2.912MB
+svchost.exe         492                 00:00:00.093        774.1kB
+svchost.exe         616                 00:00:00.156        766kB
+svchost.exe         432                 00:00:00.500        1.319MB
+svchost.exe         1032                00:00:00.093        864.3kB
+CExecSvc.exe        1056                00:00:00.109        798.7kB
+svchost.exe         1112                00:00:00.484        3.076MB
+svchost.exe         1156                00:00:00.343        1.593MB
+svchost.exe         1300                00:00:03.000        11.1MB
+PING.EXE            1308                00:00:00.046        516.1kB
+
+
+
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwMTA4OTMsNDg4MjU1OTM2LC0zMzI0NT
-UzNjNdfQ==
+eyJoaXN0b3J5IjpbLTUyMDYzNjE2OCw0ODgyNTU5MzYsLTMzMj
+Q1NTM2M119
 -->
