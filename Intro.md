@@ -1,11 +1,12 @@
-## Windows Server 2019
+---
 
-### Step 1 : Hyper -V  활성화
-두 가지 형태의 격리된 컨테이너를 비교하기 위해서는 Hypver-V가 활성화 되어야 합니다.
 
-### Step 2 : Docker 설치
- 
+---
 
+<h2 id="windows-server-2019">Windows Server 2019</h2>
+<h3 id="step-1--hyper--v--활성화">Step 1 : Hyper -V  활성화</h3>
+<p>두 가지 형태의 격리된 컨테이너를 비교하기 위해서는 Hypver-V가 활성화 되어야 합니다.</p>
+<h3 id="step-2--docker-설치">Step 2 : Docker 설치</h3>
 <h2 id="isolation-비교">Isolation 비교</h2>
 <h3 id="이미지-파일">이미지 파일</h3>
 <p>호스트 운영체제와 동일한 버전의 이미지를 다운받습니다.</p>
@@ -82,15 +83,10 @@ PING.EXE            1308                00:00:00.046        516.1kB<br>
 Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName 75       5      820       3252       0.03   4872   3 PING
 </code></pre>
 <pre class="  language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> get-process -Name vmwp
-
-Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
--------  ------    -----      -----     ------     --  -- -----------
-    951      17     7268      16088       1.55   4368   0 vmwp
-    272      14     4964      18764       1.05   6584   0 vmwp
-   
+</code></pre><p>Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName</p>
+<hr>
+<pre><code>951      17     7268      16088       1.55   4368   0 vmwp
+272      14     4964      18764       1.05   6584   0 vmwp
 </code></pre>
+<p></p>
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjAzNzgxMjIsLTE3MjY2MjIwNTBdfQ
-==
--->
