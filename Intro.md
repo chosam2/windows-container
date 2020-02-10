@@ -1,7 +1,9 @@
 ---
 
 
----
+---## Windows Server 2019
+
+### Step 1 : 
 
 <h2 id="isolation-비교">Isolation 비교</h2>
 <h3 id="이미지-파일">이미지 파일</h3>
@@ -34,7 +36,8 @@ svchost.exe         6668                00:00:00.203        2.72MB
 svchost.exe         4216                00:00:01.984        11.75MB
 </code></pre>
 <pre class="  language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> get-process -Name <span class="token function">ping</span>
-</code></pre><p>Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName</p>
+</code></pre><p>
+Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName</p>
 <hr>
 <pre><code> 75       5      820       3252       0.03   4872   3 PING
 </code></pre>
@@ -50,9 +53,12 @@ Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuat
 a503f75e958370f0bb544c94e28b65eb38e9dc59a1087297316c5006503f997b
 </code></pre>
 <pre class="  language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> get-process -Name <span class="token function">ping</span>
-</code></pre><p>Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName</p>
+</code></pre><p>
+Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName</p>
 <hr>
-<pre><code> 75       5      820       3252       0.03   4872   3 PING
+<pre><code>
+-------  ------    -----      -----     ------     --  -- -----------
+     75       5      820       3252       0.03   4872   3 PING
 </code></pre>
 <p>PS C:\Users\nobreak<span class="token operator">&gt;</span> docker <span class="token function">top</span> a503f75e958370f0bb544c94e28b65eb38e9dc59a1087297316c5006503f997b<br>
 Name                PID                 CPU                 Private Working Set<br>
@@ -72,10 +78,7 @@ svchost.exe         1300                00:00:03.000        11.1MB<br>
 PING.EXE            1308                00:00:00.046        516.1kB<br>
 </p>
 <pre class="  language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> get-process -Name <span class="token function">ping</span>
-
-Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
--------  ------    -----      -----     ------     --  -- -----------
-     75       5      820       3252       0.03   4872   3 PING
+Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName 75       5      820       3252       0.03   4872   3 PING
 </code></pre>
 <pre class="  language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> get-process -Name vmwp
 
@@ -86,3 +89,6 @@ Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuat
    
 </code></pre>
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTcxMTk1MTc5Nl19
+-->
