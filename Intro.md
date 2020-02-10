@@ -3,7 +3,8 @@
 
 ### 이미지 파일
 
-    enter code here
+호스트 운영체제와 동일한 버전의 이미지를 다운받습니다.
+`PS C:\Users\nobreak> docker pull mcr.microsoft.com/windows/nanoserver:1809`
 
 ```bash
 PS C:\Users\nobreak> docker images
@@ -19,5 +20,5 @@ mcr.microsoft.com/windows/nanoserver   1809                080394ef5494        5
 
 ### Hyper-V Isolation
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MTY0MzAzMywtMzMyNDU1MzYzXX0=
+eyJoaXN0b3J5IjpbMTY3NTYxMDI5MiwtMzMyNDU1MzYzXX0=
 -->
