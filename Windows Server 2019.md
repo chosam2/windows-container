@@ -11,7 +11,7 @@
 <h3 id="isolation-비교">Isolation 비교</h3>
 <h3 id="이미지-파일">이미지 파일</h3>
 <p>호스트 운영체제와 동일한 버전의 이미지를 다운받습니다.</p>
-<pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&amp;</span>gt<span class="token punctuation">;</span> docker pull mcr.microsoft.com/windows/nanoserver:1809
+<pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker pull mcr.microsoft.com/windows/nanoserver:1809
 </code></pre>
 <p>다운받은 이미지를 확인합니다.</p>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker images
@@ -21,6 +21,10 @@ mcr.microsoft.com/windows/nanoserver   1809                080394ef5494        5
 <h3 id="process-isolation">Process Isolation</h3>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker run -d --name process --isolation<span class="token operator">=</span>process mcr.microsoft.com/windows/nanoserver:1809  localhost -t
 cece6585ce235d4790d6ab4d86c425338a6c9091b0f45c2e6a4f883fd7348f7a
+</code></pre>
+<pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> docker inspect cece6585ce23 <span class="token operator">|</span> Select-String isolation
+
+            <span class="token string">"Isolation"</span><span class="token keyword">:</span> <span class="token string">"process"</span>,
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker <span class="token function">top</span> cece6585ce235d4790d6ab4d86c425338a6c9091b0f45c2e6a4f883fd7348f7a
 Name            PID                 CPU                 Private Working Set
@@ -39,19 +43,22 @@ PING.EXE            4872                00:00:00.031        528.4kB
 svchost.exe         6668                00:00:00.203        2.72MB
 svchost.exe         4216                00:00:01.984        11.75MB
 </code></pre>
-<pre class=" language-bash"><code class="prism  language-bash">get-process -Name <span class="token function">ping</span>
+<pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> get-process -Name <span class="token function">ping</span>                                                                                                                                                                                               Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName                                                -------  ------    -----      -----     ------     --  -- -----------
+     75       6      816       3236       0.08   4872   3 PING    
+</code></pre>
+<pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> get-process -Name vmwp
 Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
 -------  ------    -----      -----     ------     --  -- -----------
-     75       5      820       3252       0.03    4872  3 PING
-</code></pre>
-<pre class=" language-bash"><code class="prism  language-bash">get-process -Name vmwp
-Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span> VM<span class="token punctuation">(</span>M<span class="token punctuation">)</span>   CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
--------  ------    -----      ----- -----   ------     --  -- -----------
-   1737      15    39452      19620 <span class="token punctuation">..</span>.61     5.55   2376   0 vmwp
+    270      14     5760      19296       1.61   2216   0 vmwp
+    956      16     6820      15900       1.53   6704   0 vmwp
 </code></pre>
 <h3 id="hyper-v-isolation">Hyper-V Isolation</h3>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker run -d --name hyperv --isolation<span class="token operator">=</span>hyperv mcr.microsoft.com/windows/nanoserver:1809 <span class="token function">ping</span> localhost -t
 a503f75e958370f0bb544c94e28b65eb38e9dc59a1087297316c5006503f997b
+</code></pre>
+<pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> docker inspect a503f75e9583 <span class="token operator">|</span> Select-String isolation
+
+            <span class="token string">"Isolation"</span><span class="token keyword">:</span> <span class="token string">"hyperv"</span>,
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker <span class="token function">top</span> a503f75e958370f0bb544c94e28b65eb38e9dc59a1087297316c5006503f997b
 Name            PID                 CPU                 Private Working Set
@@ -70,17 +77,4 @@ svchost.exe         1156                00:00:00.343        1.593MB
 svchost.exe         1300                00:00:03.000        11.1MB
 PING.EXE            1308                00:00:00.046        516.1kB
 </code></pre>
-<pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak get-process -Name <span class="token function">ping</span>
-Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
--------  ------    -----      -----    ------     --  -- -----------
-     75       5      820       3252      0.03   4872   3 PING
-</code></pre>
-<pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak get-process -Name vmwp
-Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
--------  ------    -----      -----    ------     --  -- -----------
-   17      7268    16088       1.55     4368       0    vmwp
-  272	     14     4964      18764     
-</code></pre>
-<p>17     7268      16088       1.55   4368   0 vmwp<br>
-272      14     4964      18764       1.05   6584   0 vmwp</p>
 
