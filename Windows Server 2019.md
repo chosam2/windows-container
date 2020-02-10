@@ -40,7 +40,6 @@ svchost.exe         6668                00:00:00.203        2.72MB
 svchost.exe         4216                00:00:01.984        11.75MB
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">get-process -Name <span class="token function">ping</span>
-
 Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>    PM<span class="token punctuation">(</span>K<span class="token punctuation">)</span>      WS<span class="token punctuation">(</span>K<span class="token punctuation">)</span>     CPU<span class="token punctuation">(</span>s<span class="token punctuation">)</span>     Id  SI ProcessName
 -------  ------    -----      -----     ------     --  -- -----------
      75       5      820       3252       0.03    4872  3 PING
