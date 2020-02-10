@@ -1,6 +1,9 @@
 ## Windows Server 2019
 
-### Step 1 : 
+### Step 1 : Hyper -V  활성화
+두 가지 형태의 격리된 컨테이너를 비교하기 위해서는 Hypver-V가 활성화 되어야 합니다.
+
+ 
 
 <h2 id="isolation-비교">Isolation 비교</h2>
 <h3 id="이미지-파일">이미지 파일</h3>
@@ -87,5 +90,5 @@ Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuat
 </code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MjY2MjIwNTBdfQ==
+eyJoaXN0b3J5IjpbMTA2NzY3NTM3NywtMTcyNjYyMjA1MF19
 -->
