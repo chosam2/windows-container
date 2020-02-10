@@ -14,7 +14,6 @@
 <pre class=" language-powershell"><code class="prism  language-powershell"><span class="token function">Restart-Computer</span> <span class="token operator">-</span>Force
 </code></pre>
 <pre class=" language-powershell"><code class="prism  language-powershell"><span class="token function">PS</span> C:\Users\nobreak&gt; Get<span class="token operator">-</span>Package <span class="token operator">-</span>Name Docker <span class="token operator">-</span>ProviderName DockerMsftProvider
-
 Name                           Version          Source                           ProviderName
 <span class="token operator">--</span>-<span class="token operator">-</span>                           <span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">-</span>          <span class="token operator">--</span>-<span class="token operator">--</span><span class="token operator">-</span>                           <span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span><span class="token operator">-</span>
 docker                         19<span class="token punctuation">.</span>03<span class="token punctuation">.</span>5          DockerDefault                    DockerMsftProvider
@@ -36,7 +35,6 @@ mcr.microsoft.com/windows/nanoserver   1809                080394ef5494        5
 cece6585ce235d4790d6ab4d86c425338a6c9091b0f45c2e6a4f883fd7348f7a
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> docker inspect cece6585ce23 <span class="token operator">|</span> Select-String isolation
-
             <span class="token string">"Isolation"</span><span class="token keyword">:</span> <span class="token string">"process"</span>,
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker <span class="token function">top</span> cece6585ce235d4790d6ab4d86c425338a6c9091b0f45c2e6a4f883fd7348f7a
@@ -70,7 +68,6 @@ Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuat
 a503f75e958370f0bb544c94e28b65eb38e9dc59a1087297316c5006503f997b
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak<span class="token operator">&gt;</span> docker inspect a503f75e9583 <span class="token operator">|</span> Select-String isolation
-
             <span class="token string">"Isolation"</span><span class="token keyword">:</span> <span class="token string">"hyperv"</span>,
 </code></pre>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker <span class="token function">top</span> a503f75e958370f0bb544c94e28b65eb38e9dc59a1087297316c5006503f997b
