@@ -1,7 +1,3 @@
----
-
-
----
 
 <h2 id="isolation-비교">Isolation 비교</h2>
 <h3 id="이미지-파일">이미지 파일</h3>
@@ -89,5 +85,5 @@ Handles  NPM<span class="token punctuation">(</span>K<span class="token punctuat
 </code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3OTAxNTM0MF19
+eyJoaXN0b3J5IjpbLTEwOTAwMTQ1Nl19
 -->
