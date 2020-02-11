@@ -3,7 +3,8 @@
 
 ---
 
-<h3 id="windows-server-2019">Windows Server 2019</h3>
+<h1 id="windows-server-2019">Windows Server 2019</h1>
+<h2 id="사전-준비사항">사전 준비사항</h2>
 <h3 id="step-1--hyper--v--활성화">Step 1 : Hyper -V  활성화</h3>
 <p>두 가지 형태의 격리된 컨테이너를 비교하기 위해서는 Hypver-V가 활성화 되어야 합니다.</p>
 <pre class=" language-powershell"><code class="prism  language-powershell">Install<span class="token operator">-</span>Module <span class="token operator">-</span>Name DockerMsftProvider <span class="token operator">-</span>Repository PSGallery <span class="token operator">-</span>Force
@@ -20,8 +21,7 @@ docker                         19<span class="token punctuation">.</span>03<span
 </code></pre>
 <pre class=" language-powershell"><code class="prism  language-powershell"><span class="token function">PS</span> C:\Users\nobreak&gt; docker version                                                                                     Client: Docker Engine <span class="token operator">-</span> Enterprise                                                                                       Version:           19<span class="token punctuation">.</span>03<span class="token punctuation">.</span>5                                                                                              API version:       1<span class="token punctuation">.</span>40                                                                                                 Go version:        go1<span class="token punctuation">.</span>12<span class="token punctuation">.</span>12                                                                                            Git commit:        2ee0c57608                                                                                           Built:             11<span class="token operator">/</span>13<span class="token operator">/</span>2019 08:00:16                                                                                  OS<span class="token operator">/</span>Arch:           windows<span class="token operator">/</span>amd64                                                                                        Experimental:      false                                                                                                                                                                                                                       Server: Docker Engine <span class="token operator">-</span> Enterprise                                                                                       Engine:                                                                                                                  Version:          19<span class="token punctuation">.</span>03<span class="token punctuation">.</span>5                                                                                               API version:      1<span class="token punctuation">.</span>40 <span class="token punctuation">(</span>minimum version 1<span class="token punctuation">.</span>24<span class="token punctuation">)</span>                                                                           Go version:       go1<span class="token punctuation">.</span>12<span class="token punctuation">.</span>12                                                                                             Git commit:       2ee0c57608                                                                                            Built:            11<span class="token operator">/</span>13<span class="token operator">/</span>2019 07:58:51                                                                                   OS<span class="token operator">/</span>Arch:          windows<span class="token operator">/</span>amd64                                                                                         Experimental:     false   
 </code></pre>
-<h3 id="isolation-비교">Isolation 비교</h3>
-<h3 id="이미지-파일">이미지 파일</h3>
+<h3 id="step-3--이미지-파일">Step 3 : 이미지 파일</h3>
 <p>호스트 운영체제와 동일한 버전의 이미지를 다운받습니다.</p>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker pull mcr.microsoft.com/windows/nanoserver:1809
 </code></pre>
@@ -30,6 +30,7 @@ docker                         19<span class="token punctuation">.</span>03<span
 REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
 mcr.microsoft.com/windows/nanoserver   1809                080394ef5494        5 weeks ago         251MB
 </code></pre>
+<h2 id="isolation-비교">Isolation 비교</h2>
 <h3 id="process-isolation">Process Isolation</h3>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker run -d --name process --isolation<span class="token operator">=</span>process mcr.microsoft.com/windows/nanoserver:1809  localhost -t
 cece6585ce235d4790d6ab4d86c425338a6c9091b0f45c2e6a4f883fd7348f7a
