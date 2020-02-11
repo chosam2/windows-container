@@ -18,10 +18,20 @@ Windows Server 2016에서 처음으로 정식으로 탑재되었으며, 2019년 
 <p>기존 Linux 컨테이너와 유사한 구조로 되어있으며, 사용법 또한 OCI 표준을 따르므로 동일합니다. 다만, 라이센스 문제로 인하여 제한적인 컨테이너 OS 이미지를 사용해야 합니다.</p>
 <p><a href="https://hub.docker.com/_/microsoft-windows-base-os-images">mcr.microsoft.com 이미지 레지스트리</a>에서는 크게 3가지 형태의 이미지를 제공합니다.</p>
 <h2 id="windows-컨테이너-아키텍처">Windows 컨테이너 아키텍처</h2>
-<p>앞서 언급한 것 처럼 Windows  컨테이너의 구조와 사용법은 Linux 컨테이너와 큰 차이가 없습니다. 하지만 세부적인 구조를 살펴본다면 큰 차이를 가지고 있습니다.</p>
-<p>Linux 환경에서는 Docker와 같은 컨테이너 관리 도구를 통해 저수준/고수준 런타임 관리를 위해  runC/containerd 등과 같은 세분화 된 컨테이너 도구를 사용했습니다. 하지만 Windows 컨테이너에서는 Host Compute Servicve(HCS), Host Network Service(HNS) 등을 통해 컨테이너 관리를 가능하게 제공하고 있습니다. 자세한 설명은 <a href="%5Bhttps://techcommunity.microsoft.com/t5/containers/introducing-the-host-compute-service-hcs/ba-p/382332%5D(https://techcommunity.microsoft.com/t5/containers/introducing-the-host-compute-service-hcs/ba-p/382332)">이곳</a>을 통해 확인하시길 바랍니다.</p>
-<h3 id="프로세스-격리">프로세스 격리</h3>
-<p><img src="https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/manage-containers/media/container-arch-process.png" alt="enter image description here"></p>
+<p>앞서 언급한 것 처럼 Windows  컨테이너의 사용법은 Linux 컨테이너와 큰 차이가 없습니다. 하지만 세부적인 구조를 살펴본다면 큰 차이를 가지고 있습니다.</p>
+<p>Linux 환경에서는 Docker와 같은 컨테이너 관리 도구를 통해 저수준/고수준 런타임 관리를 위해  runC/containerd 등과 같은 세분화 된 컨테이너 도구를 사용합니다.</p>
+<p>하지만 Windows 컨테이너에서는 Host Compute Servicve(HCS), Host Network Service(HNS) 등을 통해 컨테이너 관리를 가능하게 제공하고 있습니다. 자세한 설명은 <a href="%5Bhttps://techcommunity.microsoft.com/t5/containers/introducing-the-host-compute-service-hcs/ba-p/382332%5D(https://techcommunity.microsoft.com/t5/containers/introducing-the-host-compute-service-hcs/ba-p/382332)">이곳</a>을 통해 확인하시길 바랍니다.</p>
+<h2 id="linux">Linux</h2>
+<p><img src="https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/deploy-containers/media/docker-on-linux.png" alt="enter image description here"></p>
+<h2 id="windows">Windows</h2>
+<p><img src="https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/deploy-containers/media/hcs.png" alt="enter image description here"></p>
+<h2 id="격리모드">격리모드</h2>
+<p>Windows 컨테이너는 두 가지 런타임 격리 모드인 <code>Process</code>와 <code>Hypver-V</code> 격리모드를 제공하고 있습니다. 두 격리모드는 OCI 표준을 따르는 이미지를 사용하기 때문에 동일하게 사용 가능합니다.</p>
+<p>다만, 생성 방식의 차이에 따른 호스트-컨테이너 간의 격리 수준의 차이등이 존재합니다.<br>
+<code>process</code> 방식의 경우는 전통적인 컨테이너 생성 방식과 같이 호스트의 커널을 공유하는 방식을 사용하지만 <code>hyper-v</code> 격리는 Hyper-V 상에 컨테이너를 생성하므로 별도의 커널을 기반으로 컨테이너가 생성되므로 격리성이 보장된다는 장점이 있습니다. 반면, 경량화된 가상머신 위에  생성되는 방식이기 때문에 process 방식에 비해 오버헤드가 크다는 단점이 있습니다.</p>
+<h3 id="process-격리">Process 격리</h3>
+<p>앞서 언급한 것 처럼 이는 기존<br>
+<img src="https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/manage-containers/media/container-arch-process.png" alt="enter image description here"></p>
 <h3 id="hyper-v-격리">Hyper-V 격리</h3>
 <p><img src="https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/manage-containers/media/container-arch-hyperv.png" alt="enter image description here"></p>
 <h2 id="격리-확인">격리 확인</h2>
@@ -45,9 +55,4 @@ Windows Server 2016에서 처음으로 정식으로 탑재되었으며, 2019년 
 <ul>
 <li></li>
 </ul>
-<h1 id="windows---linux-컨테이너-플랫폼-비교">Windows - Linux 컨테이너 플랫폼 비교</h1>
-<h3 id="linux">Linux</h3>
-<p><img src="https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/deploy-containers/media/docker-on-linux.png" alt="enter image description here"></p>
-<h3 id="windows">Windows</h3>
-<p><img src="https://docs.microsoft.com/ko-kr/virtualization/windowscontainers/deploy-containers/media/hcs.png" alt="enter image description here"></p>
 
