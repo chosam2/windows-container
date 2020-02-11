@@ -5,14 +5,15 @@
 
 <h1 id="windows-10">Windows 10</h1>
 <h2 id="여는글">여는글</h2>
-<p>Windows 컨테이너를 개발하고 테스트 하기 위해서는 다양한 하이퍼바이저를 사용할 수 있지만 이 문서에서는 Hyper-V를 사용한 컨테이너 사용 방법에 대해서 소개합니다.</p>
+<p>기존 Windows 기반의 컨테이너 사용은 Windows Server에서만 제공되어 왔지만 이제는 Windows for Desktop 버전에서도 사용 가능합니다. 또한 Windows 컨테이너를 개발하고 테스트 하기 위해서는 다양한 하이퍼바이저를 사용할 수 있지만 Windows 10 Pro 이상부터 사용가능한 Hyper-V를 기반으로  간단하고 뛰어난 성능의 컨테이너가 사용가능합니다.</p>
+<p>이 글에서는 Windows 10 환경에서 컨테이너 사용 방법에 대해서 소개합니다.</p>
 <h3 id="사전-준비사항">사전 준비사항</h3>
 <ul>
 <li>가상화 지원하는 CPU</li>
 <li>CPU 가상화 기능 활성화</li>
 <li>Windows 10 S Mode 비활성화 <a href="https://support.microsoft.com/ko-kr/help/4456067/windows-10-switch-out-of-s-mode">( 참고문서 )</a></li>
 <li>Windows 10 Pro, Edu 버전 이상</li>
-<li>Windows  Home 버전 또는 macOS, 리눅스 환경에서는 <a href="https://developer.microsoft.com/ko-kr/windows/downloads/virtual-machines/">개발 환경</a> 준비</li>
+<li>이 외의 Windows 버전 및 macOS, 리눅스 환경에서는 <a href="https://developer.microsoft.com/ko-kr/windows/downloads/virtual-machines/">개발 환경</a> 준비</li>
 </ul>
 <h3 id="step-1--hyper--v--활성화">Step 1 : Hyper -V  활성화</h3>
 <p>두 가지 형태의 격리된 컨테이너를 비교하기 위해서는 Hypver-V가 활성화 되어야 합니다.</p>
@@ -20,6 +21,11 @@
 </code></pre>
 <h3 id="step-2--docker-설치">Step 2 : Docker 설치</h3>
 <p>Windows 10 실행 환경이 준비되고 난 뒤에는, 본인 시스템에 맞는 <a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows">Docker for Desktop</a>을 설치합니다.</p>
+<h4 id="step-2---1--docker-for-desktop-설치">Step 2 - 1 : Docker for Desktop 설치</h4>
+<p><img src="https://github.com/chosam2/windows-container/blob/master/2.png?raw=true" alt="enter image description here"></p>
+<h4 id="step-2---2--docker-for-desktop-설치">Step 2 - 2 : Docker for Desktop 설치</h4>
+<h4 id="step-2---3--docker-for-desktop-설치">Step 2 - 3 : Docker for Desktop 설치</h4>
+<h4 id="step-2---4--docker-for-desktop-설치">Step 2 - 4 : Docker for Desktop 설치</h4>
 <h3 id="step-3--이미지-파일">Step 3 : 이미지 파일</h3>
 <p>호스트 운영체제와 동일한 버전의 이미지를 다운받습니다.</p>
 <pre class=" language-bash"><code class="prism  language-bash">PS C:\Users\nobreak docker pull mcr.microsoft.com/windows/nanoserver:1809
